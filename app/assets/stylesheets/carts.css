@@ -1,0 +1,29 @@
+.carts table {
+  border-collapse: collapse; }
+.carts td {
+  padding: 0.5em; }
+.carts td.quantity {
+  white-space: nowrap; }
+.carts td.quantity::after {
+  content: "  x"; }
+.carts td.price {
+  font-weight: bold;
+  text-align: right; }
+.carts tfoot th, .carts tfoot td.price {
+  font-weight: bold;
+  padding-top: 1em; }
+.carts tfoot th {
+  text-align: right; }
+.carts tfoot td.price {
+  border-top: solid thin; }
+.carts input[type="submit"] {
+  background-color: #881;
+  border-radius: 0.354em;
+  border: solid thin #441;
+  color: white;
+  font-size: 1em;
+  padding: 0.354em 1em; }
+.carts input[type="submit"]:hover {
+  background-color: #992; }
+
+/*# sourceMappingURL=carts.css.map */
