@@ -5,7 +5,7 @@
 .carts td.quantity {
   white-space: nowrap; }
 .carts td.quantity::after {
-  content: "  x"; }
+  content: " x"; }
 .carts td.price {
   font-weight: bold;
   text-align: right; }
@@ -16,14 +16,24 @@
   text-align: right; }
 .carts tfoot td.price {
   border-top: solid thin; }
-.carts input[type="submit"] {
-  background-color: #881;
-  border-radius: 0.354em;
-  border: solid thin #441;
-  color: white;
-  font-size: 1em;
-  padding: 0.354em 1em; }
-.carts input[type="submit"]:hover {
-  background-color: #992; }
+.carts .actions {
+  text-align: right; }
+  .carts .actions form {
+    display: inline; }
+    .carts .actions form input[type="submit"] {
+      background-color: #881;
+      border-radius: 0.354em;
+      border: solid thin #441;
+      color: white;
+      font-size: 1em;
+      padding: 0.354em 1em; }
+    .carts .actions form input[type="submit"]:hover {
+      background-color: #992; }
+    .carts .actions form input[type="submit"].checkout {
+      background-color: #bfb;
+      color: black;
+      font-weight: bold; }
+    .carts .actions form input[type="submit"].checkout:hover {
+      background-color: #efe; }
 
 /*# sourceMappingURL=carts.css.map */
