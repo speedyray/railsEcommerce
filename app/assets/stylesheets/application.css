@@ -150,4 +150,9 @@ header.main {
     .depot_form .field_with_errors input, .depot_form .field_with_errors textarea {
       background: pink; }
 
+      .locale {
+  float: right;
+  margin: 1em;
+}
+
 /*# sourceMappingURL=application.css.map */

@@ -7,6 +7,7 @@
 # Visit http://www.pragmaticprogrammer.com/titles/rails51 for more book information.
 #---
 class OrdersController < ApplicationController
+  skip_before_action :authorize, only: [:new, :create]
   include CurrentCart
   before_action :set_cart, only: [:new, :create]
   before_action :ensure_cart_isnt_empty, only: :new
@@ -42,8 +43,9 @@ class OrdersController < ApplicationController
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
-        format.html { redirect_to store_index_url, notice: 
-          'Thank you for your order.' }
+        ChargeOrderJob.perform_later(@order,pay_type_params.to_h)
+        format.html { redirect_to store_index_url(locale: I18n.locale), 
+          notice: I18n.t('.thanks') }
         format.json { render :show, status: :created,
           location: @order }
       else
@@ -97,7 +99,8 @@ class OrdersController < ApplicationController
        end
      end
 
-     def pay_type_params
+      
+    def pay_type_params
       if order_params[:pay_type] == "Credit Card"
         params.require(:order).permit(:credit_card_number, :expiration_date)
       elsif order_params[:pay_type] == "Check"
