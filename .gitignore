@@ -34,3 +34,8 @@
 /node_modules
 yarn-debug.log*
 .yarn-integrity
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
