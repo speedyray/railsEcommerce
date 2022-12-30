@@ -2,13 +2,13 @@
   "name": "depot",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "3.5",
+    "@rails/webpacker": "5.4",
     "babel-preset-react": "^6.24.1",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "serve": "^10.1.1",
-    "webpack": "^4.29.0"
+    "webpack": "^5.75.0"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.1.14"
